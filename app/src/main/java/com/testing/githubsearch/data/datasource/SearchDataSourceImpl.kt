@@ -3,16 +3,14 @@ package com.testing.githubsearch.data.datasource
 import android.util.Log
 import com.testing.githubsearch.data.api.SearchApi
 import com.testing.githubsearch.data.remotemodels.GitUsersResponseDTO
-import com.testing.githubsearch.util.ErrorState
-import com.testing.githubsearch.util.ResultWrapper
-import com.testing.githubsearch.util.SuccessState
+import com.testing.githubsearch.util.*
 import javax.inject.Inject
 
 class SearchDataSourceImpl @Inject constructor(
     private val searchApi: SearchApi
 ): SearchDatasource {
 
-    override suspend fun fetchUsers(searchText: String): ResultWrapper<GitUsersResponseDTO> {
+    override suspend fun fetchUsers(searchText: String): ResponseWrapper<GitUsersResponseDTO> {
         val response = searchApi.searchUsers(searchText = searchText)
         return if (
             response.isSuccessful &&
@@ -21,12 +19,12 @@ class SearchDataSourceImpl @Inject constructor(
         ) {
             // success case
             Log.d(TAG, "Success! ${response.body()}")
-            SuccessState(response.body()!!)
+            SuccessResponseState(response.body()!!)
         } else {
             // error case
             val error = response.errorBody().toString()
             Log.d(TAG, "Error! $error == Code ${response.code()}")
-            ErrorState(Throwable(error))
+            ErrorResponseState(Throwable(error))
         }
     }
 

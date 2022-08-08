@@ -1,6 +1,6 @@
 package com.testing.githubsearch.util
 
-import com.testing.githubsearch.data.domain.GitUser
+import com.testing.githubsearch.domain.GitUser
 import com.testing.githubsearch.data.remotemodels.GitUserDTO
 
 object GitUserDTOMapper {

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.testing.githubsearch.data.domain.GitUser
+import com.testing.githubsearch.domain.GitUser
 import com.testing.githubsearch.data.repositories.SearchRepository
 import com.testing.githubsearch.util.ErrorState
 import com.testing.githubsearch.util.LoadingState

@@ -1,7 +1,6 @@
 package com.testing.githubsearch.ui.adapters
 
-import com.testing.githubsearch.data.domain.GitUser
-import com.testing.githubsearch.ui.adapters.BaseAdapter
+import com.testing.githubsearch.domain.GitUser
 
 class SearchAdapter(
     list: List<GitUser>

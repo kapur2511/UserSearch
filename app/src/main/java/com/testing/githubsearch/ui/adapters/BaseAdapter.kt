@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.testing.githubsearch.R
-import com.testing.githubsearch.data.domain.BaseModel
-import com.testing.githubsearch.data.domain.GitUser
+import com.testing.githubsearch.domain.BaseModel
+import com.testing.githubsearch.domain.GitUser
 import com.testing.githubsearch.ui.viewholders.BaseViewHolder
 import com.testing.githubsearch.ui.viewholders.GitUserVH
 import com.testing.githubsearch.ui.viewholders.UnknownVH

@@ -2,7 +2,7 @@ package com.testing.githubsearch.ui.viewholders
 
 import android.view.View
 import com.bumptech.glide.Glide
-import com.testing.githubsearch.data.domain.GitUser
+import com.testing.githubsearch.domain.GitUser
 import com.testing.githubsearch.databinding.UserViewBinding
 
 class GitUserVH(itemView: View): BaseViewHolder<GitUser>(itemView) {
