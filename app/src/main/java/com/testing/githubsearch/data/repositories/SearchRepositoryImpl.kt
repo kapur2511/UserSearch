@@ -17,11 +17,9 @@ class SearchRepositoryImpl @Inject constructor(
     ): ResultWrapper<List<GitUser>> {
         val response = searchDatasource.fetchUsers(searchText)
         return if (response is SuccessState) {
-            val listOfUsers = mutableListOf<GitUser>()
             // items will be non-null.
-            response.data.items!!.forEach { gitUserDTO ->
-                val gitUser = GitUserDTOMapper.mapToGitUser(gitUserDTO = gitUserDTO)
-                listOfUsers.add(gitUser)
+            val listOfUsers = response.data.items!!.map { gitUserDTO ->
+                GitUserDTOMapper.mapToGitUser(gitUserDTO = gitUserDTO)
             }
             SuccessState(listOfUsers)
         } else {
